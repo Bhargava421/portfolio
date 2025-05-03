@@ -1,0 +1,143 @@
+/* src/components/Hero.module.css */
+
+.hero {
+    background: #555;
+    color: #fff;
+    padding: 4rem 20px !important;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* --- Increase the gap EVEN MORE --- */
+    gap: 14rem; /* <<< VERY LARGE VALUE (Try 12rem, 14rem, 16rem) */
+    /* Optional: Add overflow hidden to the main hero section */
+    /* overflow: hidden; */
+}
+
+.heroText {
+    flex-basis: 50%;
+    /* Further reduce max-width slightly if needed */
+    max-width: 500px; /* <<< REDUCED AGAIN (Adjust if needed) */
+    text-align: left;
+}
+
+.heroText h1 {
+    /* Base font size for large screens */
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: bold;
+    /* Apply nowrap by default */
+    white-space: nowrap;
+}
+
+.heroText h1 + p { /* Subtitle */
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #eee;
+}
+
+.heroText p:last-of-type { /* Description */
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.heroImageContainer {
+   flex-shrink: 0;
+}
+
+.heroImage {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f4f4f4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Medium Screens (Tablets, smaller laptops) */
+@media (max-width: 1024px) {
+    .hero {
+        /* --- Adjust gap proportionally --- */
+        gap: 8rem; /* <<< ADJUSTED VALUE (Keep significant) */
+    }
+    .heroText {
+        max-width: 480px; /* Adjust max-width here too if needed */
+    }
+    .heroText h1 {
+        font-size: 1.9rem;
+        white-space: nowrap;
+    }
+     .heroText h1 + p { /* Subtitle */
+        font-size: 1.2rem;
+     }
+     .heroText p:last-of-type { /* Description */
+        font-size: 0.95rem;
+     }
+     .heroImage {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Smaller Tablets / Large Phones */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+        padding: 3rem 15px !important;
+        min-height: auto;
+        /* Gap now controls vertical spacing when stacked */
+        gap: 2.5rem; /* Vertical gap remains reasonable */
+    }
+
+    .heroText {
+        flex-basis: auto;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+        order: 2;
+    }
+
+    .heroText h1 {
+        font-size: 1.8rem;
+        /* Allow wrapping again when stacked */
+        white-space: normal;
+    }
+
+    .heroText h1 + p { /* Subtitle */
+        font-size: 1.1rem;
+     }
+     .heroText p:last-of-type { /* Description */
+        font-size: 0.9rem;
+     }
+
+    .heroImageContainer {
+         order: 1;
+    }
+
+    .heroImage {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .heroText h1 {
+        font-size: 1.6rem;
+    }
+    .heroImage {
+        width: 150px;
+        height: 150px;
+    }
+    .hero {
+        gap: 2rem; /* Adjusted vertical gap */
+    }
+}
