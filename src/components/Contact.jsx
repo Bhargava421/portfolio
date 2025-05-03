@@ -15,7 +15,7 @@ function Contact() {
          <a href="https://www.linkedin.com/in/bhargava-c-salian-263084308" target="_blank" rel="noopener noreferrer">LinkedIn</a>
          <span> | </span>
          <a href="https://github.com/Bhargava421" target="_blank" rel="noopener noreferrer">GitHub</a>
-         {/* Add other relevant links */}
+         
       </div>
        
     </section>
