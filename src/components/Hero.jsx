@@ -14,7 +14,7 @@ function Hero() {
 
       <div className={styles.heroImageContainer}>
         <img
-          src="public/images/Profile.jpg"
+          src={require('public/images/Profile.jpg')}
           alt="Bhargava C Salian - Profile Picture"
           className={styles.heroImage}
         />

@@ -1,0 +1,52 @@
+@startuml
+
+left to right direction
+
+actor Administrator
+actor "Security Analyst" as SecAnalyst
+actor "End User"
+
+rectangle "Security Operations System" as SystemBoundary {
+    usecase "User Management" as UM
+    usecase "System Configuration" as SC
+    usecase "Configure Detection Rules" as CDR
+    usecase "Manage User Accounts" as MUA
+
+    usecase "Monitor Alerts" as MA
+    usecase "Generate Reports" as GR
+    
+    usecase "View Dashboard" as VD
+    usecase "Export Data" as ED
+    usecase "View Activity Logs" as VAL
+
+    usecase "Alerting" as AlertingUC
+    usecase "Reporting" as ReportingUC
+    usecase "Data Collection" as DC
+    usecase "Anomaly Detection" as AD
+    usecase "Process Mining" as PM
+}
+
+Administrator -- UM
+Administrator -- SC
+Administrator -- CDR
+Administrator -- MUA
+Administrator -- VD
+
+SecAnalyst -- VD
+SecAnalyst -- ED
+SecAnalyst -- MA
+SecAnalyst -- VAL
+
+"End User" -- VD
+"End User" -- (ReportingUC)
+
+(AlertingUC) ..> MA : <<extend>>
+(ReportingUC) ..> GR : <<extend>>
+
+(ReportingUC) .> AD : <<include>>
+(ReportingUC) .> PM : <<include>>
+
+AD .> DC : <<include>>
+PM .> DC : <<include>>
+
+@enduml
