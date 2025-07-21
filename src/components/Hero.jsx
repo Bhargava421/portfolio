@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import profilePic from '/images/Profile.jpg'; 
 
 function Hero() {
   return (
@@ -14,7 +15,7 @@ function Hero() {
 
       <div className={styles.heroImageContainer}>
         <img
-          src={require('public/images/Profile.jpg')}
+          src={profilePic}
           alt="Bhargava C Salian - Profile Picture"
           className={styles.heroImage}
         />
